@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Productos en Venta</h1>
+
+<table class="table table-sm">
+
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Cantidad</th>
+      <th>Peso</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+      <style>
+
+  
+   
+ </style>     
+ </tr>
+  </thead>
+
+  <tbody>
+    <% @productos.each do |producto| %>
+      <tr>
+        <td><%= producto.nombre %></td>
+        <td><%= producto.descripcion %></td>
+        <td><%= producto.cantidad %></td>
+        <td><%= producto.peso %></td>
+        <td><%= producto.precio %></td>
+
+        <td><%= link_to 'Ver', producto %></td>
+        <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
+        <td><%= link_to 'Eliminar', producto, method: :delete, data: { confirm: 'Esta Seguro?'} %></td>
+      </tr>
+      
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Producto', new_producto_path %>
+<%= link_to 'reportes', productos_reportes_path %>
+

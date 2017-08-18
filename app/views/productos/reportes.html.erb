@@ -1,0 +1,119 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reporte de productos ordenados por cantidad</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Cantidad</th>
+      <th>Peso</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+      <style>
+        
+      </style>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productosC.each do |producto| %>
+      <tr>
+        <td><%= producto.id %></td>
+        <td><%= producto.nombre %></td>
+        <td><%= producto.descripcion %></td>
+        <td><%= producto.cantidad %></td>
+        <td><%= producto.peso %></td>
+        <td><%= producto.precio %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% productoMa = @productosC.first %>
+<% productoMen = @productosC.last %>
+
+<h3> los productos de menor existencia son:</h3> <h4><%= productoMa.nombre %> </h4>
+<h3> los productos de mayor existencia son:</h3> <h4><%= productoMen.nombre %> </h4>
+
+
+ 
+
+ <h1>Reporte de productos ordenados por precio</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><b>Id</b></th>
+      <th><b>Nombre</b></th>
+      <th>Descripcion</th>
+      <th>Cantidad</th>
+      <th>Peso</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productosP.each do |producto| %>
+      <tr>
+        <td><%= producto.id %></td>
+        <td><%= producto.nombre %></td>
+        <td><%= producto.descripcion %></td>
+        <td><%= producto.cantidad %></td>
+        <td><%= producto.peso %></td>
+        <td><%= producto.precio %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% productoMe = @productosP.first %>
+<% productoMayor = @productosP.last %>
+
+<h3> el producto de menor precio es:</h3> <h4><%= productoMe.nombre %> </h4>
+ <h3> el producto de mayor precio es:</h3> <h4><%= productoMayor.nombre %> </h4>
+
+ <h1>Reporte de productos ordenados por peso</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><b>Id</b></th>
+      <th><b>Nombre</b></th>
+      <th>Descripcion</th>
+      <th>Cantidad</th>
+      <th>Peso</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productosPs.each do |producto| %>
+      <tr>
+        <td><%= producto.id %></td>
+        <td><%= producto.nombre %></td>
+        <td><%= producto.descripcion %></td>
+        <td><%= producto.cantidad %></td>
+        <td><%= producto.peso %></td>
+        <td><%= producto.precio %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% productoMenor = @productosPs.first %>
+<% productoMay = @productosPs.last %>
+
+<h3> el producto de menor peso es:</h3> <h4><%= productoMenor.nombre %> </h4>
+ <h3> el producto de mayor peso es:</h3> <h4><%= productoMay.nombre %> </h4>
+
+
+
+
+<%= link_to 'Atras', productos_path %>
+
+
